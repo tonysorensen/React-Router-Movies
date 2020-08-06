@@ -70,3 +70,15 @@ body {
   padding: 5px 10px;
   background-color: lightskyblue;
 }
+
+.navbutton{
+  padding: 10px 20px;
+  margin: 0 20px;
+  background-color:lightskyblue;
+  
+  
+}
+.buttons {
+  display:flex;
+  justify-content: center
+}
