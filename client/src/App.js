@@ -8,7 +8,7 @@ import Movie from "./Movies/Movie";
 const App = () => {
   const [saved, setSaved] = useState([]); // Stretch: the ids of "saved" movies
   const [movieList, setMovieList] = useState([]);
-
+console.log(movieList)
   useEffect(() => {
     const getMovies = () => {
       axios
@@ -39,12 +39,16 @@ const App = () => {
       <div className="buttons">
         <button className="navbutton">
           <Link to="/">Home</Link>
-        </button>ga
+        </button>
         <button className="navbutton">
           <Link to="/movies">Movies</Link>
         </button>
-        <Route path="/"></Route>
-        <Route path="/movies/:id"></Route>
+        <Route path="/" render={() => {
+          return <MovieList movies={movieList}/>
+        }}/>
+    
+        <Route path="/movies/:id" component ={Movie}>
+        </Route>
       </div>
     </div>
   );
